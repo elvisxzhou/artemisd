@@ -118,7 +118,7 @@ void main(string[] argv)
     {
         world.setDelta(1/60.0f);
         world.process();
-        Thread.sleep(dur!("msecs")(1000));
+        Thread.sleep(1000.msecs);
     }
 }
 ```
