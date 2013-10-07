@@ -1,11 +1,19 @@
-artemisd
+ArtemisD
 ========
 
-A D port of Artemis Entity System Framework
+A D port of [Artemis Entity System Framework](http://gamadu.com/artemis/)
 
+[Artemis](http://gamadu.com/artemis/) is a high performance Entity System framework for games.
+
+Manual:    http://gamadu.com/artemis/manual.html
+
+Tutorial:  http://gamadu.com/artemis/tutorial.html
+
+##License
+[New BSD license](LICENSE)
 
 ##Example
-
+```D
 import std.stdio;
 import artemisd.all;
 
@@ -113,3 +121,4 @@ void main(string[] argv)
         Thread.sleep(dur!("msecs")(1000));
     }
 }
+```
