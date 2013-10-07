@@ -1,0 +1,11 @@
+{
+	"name": "artemisd",
+	"description": "A D port of Artemis Entity System Framework",
+    "homepage": "http://github.com/elvisxzhou/artemisd",
+	"copyright": "Copyright (c) 2013, Elvis Zhou",
+	"license": "BSD 3-Clause",
+	"authors": [
+		"Elvis Zhou"
+	],
+    "targetType": "library",
+}
