@@ -1,11 +1,5 @@
-artemisd
-========
-
-A D port of Artemis Entity System Framework
-
-
-##Example
-
+module example;
+       
 import std.stdio;
 import artemisd.all;
 
