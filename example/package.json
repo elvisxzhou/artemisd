@@ -1,11 +1,11 @@
 {
-	"name": "example",
-	"description": "Example of artemisd",
-	"authors": [
-		"Elvis Zhou"
-	],
+    "name": "example",
+    "description": "Example of artemisd",
+    "authors": [
+        "Elvis Zhou"
+    ],
     "targetType": "executable",
-	"dependencies": {
+    "dependencies": {
         "artemisd": {"version": "~master", "path": "../"},
-	}
+    }
 }

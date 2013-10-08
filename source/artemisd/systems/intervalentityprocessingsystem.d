@@ -10,19 +10,19 @@ abstract class IntervalEntityProcessingSystem : IntervalEntitySystem
 {
     mixin TypeDecl;
 
-	public this(Aspect aspect, float interval) 
-	{
-		super(aspect, interval);
-	}
+    public this(Aspect aspect, float interval) 
+    {
+        super(aspect, interval);
+    }
 
-	protected abstract void process(Entity e);
+    protected abstract void process(Entity e);
 
-	protected override void processEntities(Bag!Entity entities) 
-	{
-		for (int i = 0, s = entities.size(); s > i; i++) 
-		{
-			process(entities.get(i));
-		}
-	}
+    protected override void processEntities(Bag!Entity entities) 
+    {
+        for (int i = 0, s = entities.size(); s > i; i++) 
+        {
+            process(entities.get(i));
+        }
+    }
 
 }

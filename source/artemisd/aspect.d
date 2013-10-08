@@ -15,64 +15,64 @@ void set(alias ba, T,R...)() if( is(T:Component) )
 
 final class Aspect 
 {
-	private BitArray allSet;
-	private BitArray exclusionSet;
-	private BitArray oneSet;
-	
-	BitArray getAllSet() 
-	{
-		return allSet;
-	}
-	
-	BitArray getExclusionSet() 
-	{
-		return exclusionSet;
-	}
-	
-	BitArray getOneSet() 
-	{
-		return oneSet;
-	}
-	
-	Aspect all(T...)() 
-	{
+    private BitArray allSet;
+    private BitArray exclusionSet;
+    private BitArray oneSet;
+    
+    BitArray getAllSet() 
+    {
+        return allSet;
+    }
+    
+    BitArray getExclusionSet() 
+    {
+        return exclusionSet;
+    }
+    
+    BitArray getOneSet() 
+    {
+        return oneSet;
+    }
+    
+    Aspect all(T...)() 
+    {
         set!(allSet, T)();
-		return this;
-	}
-	
-	Aspect exclude(T...)() 
-	{
+        return this;
+    }
+    
+    Aspect exclude(T...)() 
+    {
         set!(exclusionSet, T)();
-		return this;
-	}
-	
-	Aspect one(T...)() 
-	{
+        return this;
+    }
+    
+    Aspect one(T...)() 
+    {
         set!(oneSet, T)();
-		return this;
-	}
+        return this;
+    }
 
-	static Aspect getAspectFor(T...)() 
-	{
-		return getAspectForAll!T();
-	}
-	
-	static Aspect getAspectForAll(T...)() 
-	{
-		Aspect aspect = new Aspect();
-		aspect.all!T();
-		return aspect;
-	}
-	
-	static Aspect getAspectForOne(T...)() 
-	{
-		Aspect aspect = new Aspect();
-		aspect.one!T();
-		return aspect;
-	}
-	
-	static Aspect getEmpty() 
-	{
-		return new Aspect();
-	}
+    static Aspect getAspectFor(T...)() 
+    {
+        return getAspectForAll!T();
+    }
+    
+    static Aspect getAspectForAll(T...)() 
+    {
+        Aspect aspect = new Aspect();
+        aspect.all!T();
+        return aspect;
+    }
+    
+    static Aspect getAspectForOne(T...)() 
+    {
+        Aspect aspect = new Aspect();
+        aspect.one!T();
+        return aspect;
+    }
+    
+    static Aspect getEmpty() 
+    {
+        return new Aspect();
+    }
 }

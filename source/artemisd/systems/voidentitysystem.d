@@ -9,20 +9,20 @@ import artemisd.utils.bag;
 public abstract class VoidEntitySystem : EntitySystem {
     mixin TypeDecl;
 
-	public this() 
-	{
-		super(Aspect.getEmpty());
-	}
+    public this() 
+    {
+        super(Aspect.getEmpty());
+    }
 
-	protected final override void processEntities(Bag!Entity entities) 
-	{
-		processSystem();
-	}
-	
-	protected abstract void processSystem();
+    protected final override void processEntities(Bag!Entity entities) 
+    {
+        processSystem();
+    }
+    
+    protected abstract void processSystem();
 
-	protected override bool checkProcessing() 
-	{
-		return true;
-	}
+    protected override bool checkProcessing() 
+    {
+        return true;
+    }
 }

@@ -9,37 +9,37 @@ abstract class Manager : EntityObserver
 {
     mixin TypeDecl;
 
-	protected World world;
-	
-	void initialize();
+    protected World world;
+    
+    void initialize();
 
-	final void setWorld(World world) 
-	{
-		this.world = world;
-	}
+    final void setWorld(World world) 
+    {
+        this.world = world;
+    }
 
-	final World getWorld() 
-	{
-		return world;
-	}
-	
-	public void added(Entity e) 
-	{
-	}
-	
-	public void changed(Entity e) 
-	{
-	}
-	
-	public void deleted(Entity e) 
-	{
-	}
-	
-	public void disabled(Entity e) 
-	{
-	}
-	
-	public void enabled(Entity e) 
-	{
-	}
+    final World getWorld() 
+    {
+        return world;
+    }
+    
+    public void added(Entity e) 
+    {
+    }
+    
+    public void changed(Entity e) 
+    {
+    }
+    
+    public void deleted(Entity e) 
+    {
+    }
+    
+    public void disabled(Entity e) 
+    {
+    }
+    
+    public void enabled(Entity e) 
+    {
+    }
 }

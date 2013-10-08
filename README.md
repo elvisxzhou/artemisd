@@ -47,7 +47,7 @@ final class Velocity : Component
 
 final class Renderer : Component
 {
-	mixin TypeDecl;
+    mixin TypeDecl;
 }
 
 final class MovementSystem : EntityProcessingSystem
@@ -99,7 +99,7 @@ void main(string[] argv)
 {
     World world = new World();
     world.setSystem(new MovementSystem);
-	world.setSystem(new RenderSystem);
+    world.setSystem(new RenderSystem);
     world.initialize();
 
     Entity e = world.createEntity();
@@ -107,10 +107,10 @@ void main(string[] argv)
     e.addComponent(new Velocity(10,0));
     e.addToWorld();
 
-	Entity e1 = world.createEntity();
+    Entity e1 = world.createEntity();
     e1.addComponent(new Position(0,0));
-	e1.addComponent(new Renderer);
-	e1.addToWorld();
+    e1.addComponent(new Renderer);
+    e1.addToWorld();
 
     import core.thread;
     

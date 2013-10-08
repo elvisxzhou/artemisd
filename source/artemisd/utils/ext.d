@@ -46,6 +46,6 @@ bool intersects(BitArray set1, BitArray set2) {
 
 auto ref getWithDefault(K,V)(ref V[K] aa, K key, lazy V defValue)
 {
-	auto p = key in aa;
-	return p ? *p : (aa[key] = defValue());
+    auto p = key in aa;
+    return p ? *p : (aa[key] = defValue());
 }
