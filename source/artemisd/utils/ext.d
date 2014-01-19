@@ -19,7 +19,7 @@ size_t nextSetBit(BitArray ba, size_t index)
     if( u >= ba.dim() ) return -1;
 
     auto d = (index+1)%ba.bitsPerSizeT;
-    size_t b = d > 0 ? ba.ptr[u] & (0xffffffff<<d) : 0;
+    size_t b = d > 0 ? ba.ptr[u] & (size_t.max<<d) : 0;
     while(true)
     {
         if( b )
