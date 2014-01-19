@@ -75,7 +75,7 @@ abstract class EntitySystem : EntityObserver
         // Check if the entity possesses ALL of the components defined in the aspect.
         if(!allSet.isEmpty()) 
         {
-            for (size_t i = allSet.nextSetBit(0); i != size_t.max; i = allSet.nextSetBit(i+1)) 
+            for (size_t i = 0; i < allSet.length; i++)
             {
                 if(!componentBits[i]) 
                 {

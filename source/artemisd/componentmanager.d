@@ -28,7 +28,7 @@ class ComponentManager : Manager
     private void removeComponentsOfEntity(Entity e) 
     {
         BitArray componentBits = e.getComponentBits();
-        for (size_t i = componentBits.nextSetBit(0); i != size_t.max; i = componentBits.nextSetBit(i+1)) 
+        for (size_t i = 0; i < componentBits.length; i++)
         {
             componentsByType.get(i).set(e.getId(), null);
         }
@@ -89,7 +89,7 @@ class ComponentManager : Manager
     {
         BitArray componentBits = e.getComponentBits();
 
-        for (size_t i = componentBits.nextSetBit(0); i != size_t.max; i = componentBits.nextSetBit(i+1)) 
+        for (size_t i = 0; i < componentBits.length; i++)
         {
             fillBag.add(componentsByType.get(i).get(e.getId()));
         }
