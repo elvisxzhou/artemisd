@@ -77,7 +77,7 @@ abstract class EntitySystem : EntityObserver
         {
             for (size_t i = 0; i < allSet.length; i++)
             {
-                if(!componentBits[i]) 
+                if(allSet[i] && !componentBits[i]) 
                 {
                     interested = false;
                     break;
