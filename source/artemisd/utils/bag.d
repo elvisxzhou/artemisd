@@ -123,10 +123,7 @@ final class Bag(E)
 
     void set(int index, E e) 
     {
-        if(index >= data.length) 
-        {
-            grow(index*2);
-        }
+        ensureCapacity(index);
         size = index+1;
         data[index] = e;
     }

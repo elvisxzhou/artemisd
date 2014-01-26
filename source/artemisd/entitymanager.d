@@ -13,7 +13,7 @@ class EntityManager : Manager
 
 private:
     Bag!Entity entities;
-    BitArray disabled_;
+    bool[int] disabled_;
     
     int active;
     long added_;
@@ -49,19 +49,22 @@ public:
     
     override void enabled(Entity e) 
     {
-        disabled_[e.getId()] = 0;
+        disabled_[e.getId()] = false;
     }
     
     override void disabled(Entity e) 
     {
-        disabled_[e.getId()] = 1;
+        disabled_[e.getId()] = true;
     }
     
     override void deleted(Entity e) 
     {
-        entities.set(e.getId(), null);
-        disabled_[e.getId()] = 0;
-        identifierPool.checkIn(e.getId());
+        auto id = e.getId();
+        debug { assert(id >= 0); }
+        
+        entities.set(id, null);
+        disabled_[id] = false;
+        identifierPool.checkIn(id);
         
         active--;
         deleted_++;
