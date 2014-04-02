@@ -21,7 +21,7 @@ abstract class DelayedEntityProcessingSystem : EntitySystem
 
     protected final override void processEntities(Bag!Entity entities) 
     {
-        for (int i = 0, s = entities.size(); s > i; i++) 
+        for (size_t i = 0, s = entities.size(); s > i; i++) 
         {
             Entity entity = entities.get(i);
             processDelta(entity, acc);
