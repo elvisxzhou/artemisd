@@ -16,7 +16,7 @@ bool isEmpty(BitArray ba)
 size_t nextSetBit(BitArray ba, size_t index)
 {
     size_t u = index / ba.bitsPerSizeT;
-    if( u >= ba.dim() ) return -1;
+    if( u >= ba.dim() ) return size_t.max;
 
     auto d = (index+1)%ba.bitsPerSizeT;
     size_t b = d > 0 ? ba.ptr[u] & (size_t.max<<d) : 0;
@@ -28,7 +28,7 @@ size_t nextSetBit(BitArray ba, size_t index)
         }
 
         if( ++u >= ba.dim() )
-            return -1;
+            return size_t.max;
 
         b = ba.ptr[u];
     }
