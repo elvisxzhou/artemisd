@@ -15,7 +15,7 @@ abstract class IntervalEntityProcessingSystem : IntervalEntitySystem
         super(aspect, interval);
     }
 
-    protected abstract void process(Entity e);
+    protected void process(Entity e);
 
     protected override void processEntities(Bag!Entity entities) 
     {
@@ -25,4 +25,8 @@ abstract class IntervalEntityProcessingSystem : IntervalEntitySystem
         }
     }
 
+    protected override bool checkProcessing() 
+    {
+        return true;
+    }
 }
