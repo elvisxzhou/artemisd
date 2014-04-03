@@ -19,7 +19,7 @@ abstract class IntervalEntityProcessingSystem : IntervalEntitySystem
 
     protected override void processEntities(Bag!Entity entities) 
     {
-        for (int i = 0, s = entities.size(); s > i; i++) 
+        for (size_t i = 0, s = entities.size(); s > i; i++) 
         {
             process(entities.get(i));
         }

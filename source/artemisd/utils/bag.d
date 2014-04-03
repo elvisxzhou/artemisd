@@ -91,12 +91,12 @@ final class Bag(E)
         return size_;
     }
 
-    @property void size(int size) 
+    @property void size(size_t size) 
     {
         size_ = size;
     }
     
-    int getCapacity() 
+    size_t getCapacity() 
     {
         return data.length;
     }
@@ -123,10 +123,7 @@ final class Bag(E)
 
     void set(int index, E e) 
     {
-        if(index >= data.length) 
-        {
-            grow(index*2);
-        }
+        ensureCapacity(index);
         size = index+1;
         data[index] = e;
     }
@@ -172,15 +169,15 @@ private:
 
     void grow() 
     {
-        int newCapacity = (data.length * 3) / 2 + 1;
+        size_t newCapacity = (data.length * 3) / 2 + 1;
         grow(newCapacity);
     }
     
-    void grow(int newCapacity) 
+    void grow(size_t newCapacity) 
     {
         data.length = newCapacity;
     }
     
     E[] data;
-    int size_;
+    size_t size_;
 }
