@@ -3,6 +3,7 @@ module artemisd.world;
 import artemisd.utils.bag;
 import artemisd.entitymanager;
 import artemisd.entity;
+import artemisd.entitytemplate;
 import artemisd.componentmanager;
 import artemisd.entitysystem;
 import artemisd.manager;
@@ -135,6 +136,12 @@ class World
     Entity createEntity() 
     {
         return em.createEntityInstance();
+    }
+
+    Entity createEntityFromTemplate(T : EntityTemplate, Args...)(Args args) {
+        Entity entity = em.createEntityInstance();
+        T.buildEntity(entity, this, args);
+        return entity;
     }
 
     Entity getEntity(int entityId) 

@@ -10,6 +10,7 @@ public
     import artemisd.world;
     import artemisd.component;
     import artemisd.entity; 
+    import artemisd.entitytemplate; 
     import artemisd.componentmanager;
     import artemisd.entitymanager;
     import artemisd.entitysystem;
