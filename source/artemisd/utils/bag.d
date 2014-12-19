@@ -96,7 +96,7 @@ final class Bag(E)
         size_ = size;
     }
     
-    int getCapacity() 
+    size_t getCapacity() 
     {
         return data.length;
     }
@@ -172,11 +172,11 @@ private:
 
     void grow() 
     {
-        int newCapacity = (data.length * 3) / 2 + 1;
+        size_t newCapacity = (data.length * 3) / 2 + 1;
         grow(newCapacity);
     }
     
-    void grow(int newCapacity) 
+    void grow(size_t newCapacity) 
     {
         data.length = newCapacity;
     }
