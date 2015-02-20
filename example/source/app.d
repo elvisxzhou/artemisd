@@ -46,7 +46,7 @@ final class MovementSystem : EntityProcessingSystem
     }
 
     override void process(Entity e)
-    {
+	{
         Position pos = e.getComponent!Position;
         Velocity vel = e.getComponent!Velocity;
         Renderer rend = e.getComponent!Renderer;

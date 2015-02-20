@@ -13,7 +13,7 @@ bool isEmpty(BitArray ba)
     return true;
 }
 
-long nextSetBit(BitArray ba, size_t index)
+size_t nextSetBit(BitArray ba, size_t index)
 {
     size_t u = index / ba.bitsPerSizeT;
     if( u >= ba.dim() ) return -1;
