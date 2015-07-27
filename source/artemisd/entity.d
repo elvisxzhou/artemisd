@@ -49,11 +49,16 @@ final class Entity
 
     void reset() 
     {
-        componentBits.length = Component.TypeNum;
+        clearComponents();
         systemBits.length = EntitySystem.TypeNum;
         systemBits ^= systemBits;
-        componentBits ^= componentBits;
         uuid = randomUUID();
+    }
+
+    void clearComponents()
+    {
+        componentBits.length = Component.TypeNum;
+        componentBits ^= componentBits;
     }
 
     override string toString() 

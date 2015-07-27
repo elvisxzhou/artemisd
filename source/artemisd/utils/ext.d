@@ -4,7 +4,7 @@ import std.bitmanip;
 import core.bitop;
 import std.algorithm;
 
-bool isEmpty(BitArray ba)
+auto isEmpty(BitArray ba)
 {
     for(auto i=0; i<ba.dim(); ++i)
         if( ba.ptr[i] )
@@ -13,13 +13,13 @@ bool isEmpty(BitArray ba)
     return true;
 }
 
-long nextSetBit(BitArray ba, size_t index)
+auto nextSetBit(BitArray ba, size_t index)
 {
-    size_t u = index / ba.bitsPerSizeT;
+    auto u = index / ba.bitsPerSizeT;
     if( u >= ba.dim() ) return -1;
 
     auto d = (index+1)%ba.bitsPerSizeT;
-    size_t b = d > 0 ? ba.ptr[u] & (0xffffffff<<d) : 0;
+    auto b = d > 0 ? ba.ptr[u] & (0xffffffff<<d) : 0;
     while(true)
     {
         if( b )

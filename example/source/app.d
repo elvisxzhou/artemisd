@@ -49,10 +49,9 @@ final class MovementSystem : EntityProcessingSystem
     {
         Position pos = e.getComponent!Position;
         Velocity vel = e.getComponent!Velocity;
-        Renderer rend = e.getComponent!Renderer;
+
         assert(pos !is null);
         assert(vel !is null);
-        assert(rend is null);
 
         pos.x += vel.x * world.getDelta();
         pos.y += vel.y * world.getDelta();
@@ -95,6 +94,7 @@ void main(string[] argv)
 
     Entity e1 = world.createEntity();
     e1.addComponent(new Position(0,0));
+    e1.addComponent(new Velocity(10,0));
     e1.addComponent(new Renderer);
     e1.addToWorld();
 
